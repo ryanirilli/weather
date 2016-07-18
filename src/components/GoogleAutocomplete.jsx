@@ -23,7 +23,7 @@ export default React.createClass({
     const { inputClass, placeholder } = this.props;
     const className = `u-1/1 ${inputClass}`;
     const _placeholder = placeholder || "Choose a city";
-    return <div>
+    return <div className="google-autocomplete">
       <input ref="input" type="text" className={className} placeholder={_placeholder} />
     </div>
   }

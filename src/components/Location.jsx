@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 
+//components
 import GoogleAutocomplete from './GoogleAutocomplete.jsx!';
 import BgLoader from './BgLoader.jsx!';
 
@@ -45,10 +46,6 @@ export const Location = React.createClass({
   }
 });
 
-function mapStateToProps(state) {
-  return {};
-}
-
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     push,
@@ -56,4 +53,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export const LocationContainer = connect(mapStateToProps, mapDispatchToProps)(Location);
+export const LocationContainer = connect(undefined, mapDispatchToProps)(Location);

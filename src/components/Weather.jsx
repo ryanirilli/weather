@@ -9,6 +9,7 @@ import iconMap from './../utils/icons';
 import { fetchWeather, setIsFetchingWeather } from 'src/action-creators/forecast';
 import { setSelectedPlace } from './../action-creators/google-maps';
 
+//components
 import GoogleAutocomplete from './GoogleAutocomplete.jsx!';
 import BgLoader from './BgLoader.jsx!';
 
