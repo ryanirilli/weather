@@ -4,7 +4,7 @@
  ************************************/
 
 const buildDir        = './dist';
-const staticAssetsDir = `${buildDir}/static`;
+const staticAssetsDir = `${buildDir}/weather/static`;
 const cssDir          = `${staticAssetsDir}/css`;
 const jsDir           = `${staticAssetsDir}/js`;
 const imgDir          = `${staticAssetsDir}/img`;
