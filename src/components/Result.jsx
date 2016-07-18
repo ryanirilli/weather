@@ -6,7 +6,7 @@ import moment from 'moment';
 import { convertStringToInt } from './../utils/utils';
 import iconMap from './../utils/icons';
 
-import { fetchWeather, setIsFetchingWeather } from '/src/action-creators/forecast';
+import { fetchWeather, setIsFetchingWeather } from 'src/action-creators/forecast';
 import { setSelectedPlace } from './../action-creators/google-maps';
 
 //components
