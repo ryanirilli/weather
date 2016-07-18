@@ -8,20 +8,30 @@ At the time of publishing, we are using Node 5.4.1 but should work with version 
 
 ```
 npm install -g jspm gulp
-git clone git@github.com:Points/react-jspm-boilerplate.git
-cd react-jspm-boilerplate
+git clone https://github.com/ryanirilli/weather
+cd weather/app
 npm install
 jspm install
+cd ../api
+npm install
 ```
 
-## What's included?
+## Run locally
+from the root directory
 
-- Gulp
-- JSPM
-- React
-- Redux
-- Karma
-- Mocha
-- Chai
-- Sinon
+### app server (livereload and serve static assets)
+
+```
+cd app
+gulp serve
+
+```
+
+### api server (dark skys api)
+in another terminal session
+
+```
+cd api
+node index.js
+```
 
