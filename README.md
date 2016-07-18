@@ -25,7 +25,7 @@ npm install
 
 ## Run locally
 
-Note:In order to run the appyou need to set your 
+Note: In order to run the app you need to set your 
 `FORECAST_API_KEY` environment variable. 
 
 from the root directory
