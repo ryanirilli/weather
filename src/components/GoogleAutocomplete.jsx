@@ -16,7 +16,10 @@ export default React.createClass({
 
   onPlaceChange() {
     const { autocomplete } = this.state;
-    this.props.onSelect(autocomplete.getPlace());
+    const place = autocomplete.getPlace();
+    if(place.hasOwnProperty('geometry')) {
+      this.props.onSelect(place);
+    }
   },
 
   render() {
