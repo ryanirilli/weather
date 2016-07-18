@@ -38,7 +38,7 @@ export const Location = React.createClass({
 
   setSelectedPlace(place) {
     this.props.setSelectedPlace(place);
-    this.props.push('/weather');
+    this.props.push('/weather/result');
   },
 
   getQuote() {

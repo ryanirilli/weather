@@ -18,7 +18,7 @@ export const Weather = React.createClass({
   componentWillMount() {
     const { selectedPlace } = this.props;
     if(!selectedPlace.size) {
-      this.props.push('/location');
+      this.props.push('/weather/location');
     } else {
       const location = selectedPlace.getIn(['geometry', 'location']);
       this.props.fetchWeather(location.lat(), location.lng());

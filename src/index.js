@@ -43,9 +43,12 @@ ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={AppContainer}>
-        <IndexRedirect to="location" />
-        <Route path="location" component={LocationContainer}></Route>
-        <Route path="weather" component={WeatherContainer}></Route>
+        <IndexRedirect to="weather" />
+        <Route path="weather">
+          <IndexRedirect to="location" />
+          <Route path="location" component={LocationContainer}></Route>
+          <Route path="result" component={WeatherContainer}></Route>
+        </Route>
       </Route>
     </Router>
   </Provider>,
