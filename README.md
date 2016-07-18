@@ -27,7 +27,7 @@ gulp serve
 
 ```
 
-### api server (dark skys api)
+### api server 
 in another terminal session
 
 ```
