@@ -1,0 +1,45 @@
+.bg-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-clear-day {
+  background: #FFCD00;
+  color: white;
+}
+.bg-clear-night {
+  background: #253137;
+  color: white;
+}
+.bg-rain {
+  background: #536D79;
+  color: white;
+}
+.bg-snow {
+  background: white;
+  color: #333;
+}
+.bg-sleet {
+  background: #E43834;
+  color: white;
+}
+.bg-wind {
+  background: #E43834;
+  color: white;
+}
+.bg-fog {
+  background: #e6e6e6;
+  color: #333;
+}
+.bg-cloudy {
+  background: #e6e6e6;
+  color: #333;
+}
+.bg-partly-cloudy-day {
+  background: #e6e6e6;
+  color: #333;
+}
+.bg-partly-cloudy-night {
+  background: #e6e6e6;
+  color: #333;
+}
