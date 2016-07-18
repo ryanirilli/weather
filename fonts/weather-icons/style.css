@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?4ggph7');
-    src:    url('fonts/icomoon.eot?4ggph7#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?4ggph7') format('truetype'),
-        url('fonts/icomoon.woff?4ggph7') format('woff'),
-        url('fonts/icomoon.svg?4ggph7#icomoon') format('svg');
+    src:    url('fonts/icomoon.eot?5fxvyv');
+    src:    url('fonts/icomoon.eot?5fxvyv#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?5fxvyv') format('truetype'),
+        url('fonts/icomoon.woff?5fxvyv') format('woff'),
+        url('fonts/icomoon.svg?5fxvyv#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -24,14 +24,8 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-caret-down:before {
-    content: "\e927";
-}
-.icon-caret-up:before {
-    content: "\e926";
-}
-.icon-quotes-left:before {
-    content: "\e925";
+.icon-heart:before {
+    content: "\e928";
 }
 .icon-cloud:before {
     content: "\e900";
@@ -143,5 +137,14 @@
 }
 .icon-thermometer-full:before {
     content: "\e924";
+}
+.icon-caret-down:before {
+    content: "\e927";
+}
+.icon-caret-up:before {
+    content: "\e926";
+}
+.icon-quotes-left:before {
+    content: "\e925";
 }
 

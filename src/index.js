@@ -8,18 +8,18 @@ import thunk from 'redux-thunk';
 import 'whatwg-fetch'; //window.fetch polyfill
 
 // Middleware
-import logger from 'src/middlewares/logger';
+import logger from '/src/middlewares/logger';
 const routingMiddleware = routerMiddleware(browserHistory);
 const middlewares = applyMiddleware(logger, thunk, routingMiddleware);
 
 // Components
-import { AppContainer } from 'src/components/App.jsx!';
-import { LocationContainer } from 'src/components/Location.jsx!';
-import { WeatherContainer } from 'src/components/Weather.jsx!';
+import { AppContainer } from '/src/components/App.jsx!';
+import { LocationContainer } from '/src/components/Location.jsx!';
+import { ResultContainer } from '/src/components/Result.jsx!';
 
 // Reducers
-import googleMaps from 'src/reducers/google-maps';
-import forecast from 'src/reducers/forecast';
+import googleMaps from '/src/reducers/google-maps';
+import forecast from '/src/reducers/forecast';
 const reducers = combineReducers({
   googleMaps,
   forecast,
@@ -31,7 +31,7 @@ const store = createStore(reducers, middlewares);
 const history = syncHistoryWithStore(browserHistory, store);
 
 // Initialize Google maps api (for location autocomplete)
-import { hasLoadedMaps } from 'src/action-creators/google-maps';
+import { hasLoadedMaps } from '/src/action-creators/google-maps';
 const script = document.createElement('script');
 const googleMapsBrowserApiKey = 'AIzaSyCGSTpd6g9oDfqBKe_4N-VDe2YeuTtxOp4';
 script.src = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${googleMapsBrowserApiKey}&libraries=places&callback=gmapsInit`;
@@ -47,7 +47,7 @@ ReactDOM.render(
         <Route path="weather">
           <IndexRedirect to="location" />
           <Route path="location" component={LocationContainer}></Route>
-          <Route path="result" component={WeatherContainer}></Route>
+          <Route path="result" component={ResultContainer}></Route>
         </Route>
       </Route>
     </Router>

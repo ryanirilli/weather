@@ -6,14 +6,14 @@ import moment from 'moment';
 import { convertStringToInt } from './../utils/utils';
 import iconMap from './../utils/icons';
 
-import { fetchWeather, setIsFetchingWeather } from 'src/action-creators/forecast';
+import { fetchWeather, setIsFetchingWeather } from '/src/action-creators/forecast';
 import { setSelectedPlace } from './../action-creators/google-maps';
 
 //components
 import GoogleAutocomplete from './GoogleAutocomplete.jsx!';
 import BgLoader from './BgLoader.jsx!';
 
-export const Weather = React.createClass({
+export const Result = React.createClass({
 
   componentWillMount() {
     const { selectedPlace } = this.props;
@@ -42,7 +42,9 @@ export const Weather = React.createClass({
     const { weatherData } = this.props;
     const days = weatherData.getIn(['daily', 'data']);
     return <div>
-      <GoogleAutocomplete onSelect={this.setSelectedPlace} inputClass="u-p- u-b0" />
+      <div className="section-main">
+        <GoogleAutocomplete onSelect={this.setSelectedPlace} inputClass="u-p- u-b0" />
+      </div>
       <section className={`current bg-container u-pv++ text-center`}>
         <BgLoader blur={true} imgId="607" tint={true}>
           {this.renderCurrent()}
@@ -144,4 +146,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export const WeatherContainer = connect(mapStateToProps, mapDispatchToProps)(Weather);
+export const ResultContainer = connect(mapStateToProps, mapDispatchToProps)(Result);

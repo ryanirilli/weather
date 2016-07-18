@@ -6,6 +6,7 @@ $fancy-field-focus-color: #5383c1;
   border-top: none;
   border-right: none;
   border-bottom-width: 1px;
+  -webkit-border-radius:0px; //remove rounded corners in iOS
   &:focus {
     outline: none;
     color: $fancy-field-focus-color;

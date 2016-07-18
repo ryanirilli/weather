@@ -1,10 +1,17 @@
-## Weather App
+## Live demo
 
-Uses https://developer.forecast.io/ api to display current weather and 5 day forecast
+http://ryan-irilli.com/weather 
+
+## Description
+
+Uses https://developer.forecast.io/ api to display current weather and 
+5 day forecast
 
 ## Install
 
-At the time of publishing, I am using `Node 5.4.1`. I highly recommend using [nvm](https://github.com/creationix/nvm) to manage your version of Node.
+At the time of publishing, I am using `Node 5.4.1`. I highly recommend 
+using [nvm](https://github.com/creationix/nvm) to manage your version 
+of Node.
 
 ```
 npm install -g jspm gulp
@@ -17,6 +24,10 @@ npm install
 ```
 
 ## Run locally
+
+Note:In order to run the appyou need to set your 
+`FORECAST_API_KEY` environment variable. 
+
 from the root directory
 
 ### app server (livereload and serve static assets)

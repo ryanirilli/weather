@@ -15,7 +15,9 @@ export const App = React.createClass({
       <section className="main">
         {this.props.children}
       </section>
-      <footer className="footer"></footer>
+      <footer className="footer text-center opacity-3 u-pv">
+        Made with <i className="icon-heart"></i> by Ryan Irilli
+      </footer>
     </main>
   }
 });

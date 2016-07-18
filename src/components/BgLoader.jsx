@@ -16,7 +16,7 @@ export default React.createClass({
       const img = e.currentTarget;
       const { bg } = this.refs;
       bg.style.backgroundImage = `url(${src})`;
-      bg.classList += ' bg-loader__bg--showing';
+      bg.classList.add('bg-loader__bg--showing');
       img.remove();
       img.removeEventListener('load', onLoad);
     };
