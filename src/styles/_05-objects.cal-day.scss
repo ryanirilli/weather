@@ -1,0 +1,37 @@
+$cal-day-size: 48px;
+$cal-day-header-height: 14px;
+$cal-day-body-height: 29px;
+$cal-day-border-radius: 2px;
+
+.cal-day {
+  width: $cal-day-size;
+  text-align: center;
+}
+
+.cal-day--main {
+  .cal-day__header {
+    background: #68adce;
+    color: white;
+  }
+}
+
+.cal-day__header {
+  width: 100%;
+  height: $cal-day-header-height;
+  text-transform: uppercase;
+  font-weight: 800;
+  border-top-left-radius: $cal-day-border-radius;
+  border-top-right-radius: $cal-day-border-radius;
+  font-size: 0.7rem;
+}
+
+.cal-day__body {
+  color: #c7c7c7;
+  box-shadow: inset 0 0 1px #BDBDBD;
+  height: $cal-day-body-height;
+  line-height: $cal-day-body-height;
+  font-size: 1.4375rem;
+  border-bottom-left-radius: $cal-day-border-radius;
+  border-bottom-right-radius: $cal-day-border-radius;
+  background: white;
+}

@@ -1,0 +1,22 @@
+$fancy-field-focus-color: #5383c1;
+%fancy-field,
+.fancy-field {
+  padding: 10px;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom-width: 1px;
+  &:focus {
+    outline: none;
+    color: $fancy-field-focus-color;
+    border-bottom-color: $fancy-field-focus-color;
+  }
+}
+
+.fancy-field-large {
+  @extend %fancy-field;
+  font-size: 20px;
+  @include media-query(palm) {
+    font-size: 16px;
+  }
+}

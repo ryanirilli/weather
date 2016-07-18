@@ -1,0 +1,14 @@
+%section {
+  margin: 0 auto;
+  position: relative;
+}
+
+.section-main {
+  @extend %section;
+  max-width: 600px;
+}
+
+.section-small {
+  @extend %section;
+  max-width: 300px;
+}

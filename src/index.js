@@ -2,26 +2,51 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware, combineReducers, bindActionCreators } from 'redux';
 import { Provider, connect } from 'react-redux';
-import { Router, Route, browserHistory } from 'react-router';
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer, routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk';
+import 'whatwg-fetch'; //window.fetch polyfill
 
+// Middleware
+import logger from 'src/middlewares/logger';
+const routingMiddleware = routerMiddleware(browserHistory);
+const middlewares = applyMiddleware(logger, thunk, routingMiddleware);
+
+// Components
 import { AppContainer } from 'src/components/App.jsx!';
-import appReducer from 'src/reducers/app-reducer.js';
+import { LocationContainer } from 'src/components/Location.jsx!';
+import { WeatherContainer } from 'src/components/Weather.jsx!';
 
-const store = createStore(
-  combineReducers({
-    routing: routerReducer,
-    app: appReducer
-  }), applyMiddleware(thunk)
-);
+// Reducers
+import googleMaps from 'src/reducers/google-maps';
+import forecast from 'src/reducers/forecast';
+const reducers = combineReducers({
+  googleMaps,
+  forecast,
+  routing: routerReducer
+});
 
+// Create Store
+const store = createStore(reducers, middlewares);
 const history = syncHistoryWithStore(browserHistory, store);
 
+// Initialize Google maps api (for location autocomplete)
+import { hasLoadedMaps } from 'src/action-creators/google-maps';
+const script = document.createElement('script');
+const googleMapsBrowserApiKey = 'AIzaSyCGSTpd6g9oDfqBKe_4N-VDe2YeuTtxOp4';
+script.src = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${googleMapsBrowserApiKey}&libraries=places&callback=gmapsInit`;
+window.gmapsInit = () => store.dispatch(hasLoadedMaps());
+document.body.appendChild(script);
+
+// Initialize App 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={AppContainer}></Route>
+      <Route path="/" component={AppContainer}>
+        <IndexRedirect to="location" />
+        <Route path="location" component={LocationContainer}></Route>
+        <Route path="weather" component={WeatherContainer}></Route>
+      </Route>
     </Router>
   </Provider>,
   document.getElementById('app')

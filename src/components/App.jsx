@@ -5,21 +5,25 @@ import { connect } from 'react-redux';
 
 export const App = React.createClass({
   render() {
-    return <div className="app-container">
-      <img ref="unsulliedLogo" 
-           alt="unsullied logo" 
-           className="unsullied-logo" 
-           src="/static/img/unsullied-logo.svg" />
-    </div>
+    //do not render the app until google maps API has loaded
+    if(!this.props.hasLoadedMaps) {
+      return null;
+    }
+    
+    return <main className="app-container">
+      <header className="header"></header>
+      <section className="main">
+        {this.props.children}
+      </section>
+      <footer className="footer"></footer>
+    </main>
   }
 });
 
 function mapStateToProps(state) {
-  return {};
+  return {
+    hasLoadedMaps: state.googleMaps.get('hasLoadedMaps')
+  };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch);
-}
-
-export const AppContainer = connect(mapStateToProps, mapDispatchToProps)(App);
+export const AppContainer = connect(mapStateToProps)(App);

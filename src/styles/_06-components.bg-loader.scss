@@ -1,0 +1,33 @@
+
+
+.bg-loader {
+
+}
+
+.bg-loader__img {
+  visibility: hidden;
+  position: absolute;
+  z-index: -999;
+}
+
+.bg-loader__bg {
+  position: absolute;
+  @include fill();
+  z-index: -1;
+  background-size: cover;
+  opacity: 0;
+  @include vendor(transition, opacity 1s ease);
+}
+
+.bg-loader__bg--tint {
+  &:after {
+    content: '';
+    position: absolute;
+    @include fill();
+    background: rgba(54, 128, 197, 0.73);
+  }
+}
+
+.bg-loader__bg--showing {
+  opacity: 1;
+}

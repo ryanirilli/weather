@@ -1,0 +1,27 @@
+.ib {
+  display: inline-block;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.cf:before,
+.cf:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+.cf:after {
+  clear: both;
+}
+
+@for $i from 0 through 10 {
+  .opacity-#{$i} {
+    opacity: $i/10;
+  }
+}

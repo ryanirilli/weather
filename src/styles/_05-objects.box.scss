@@ -1,0 +1,7 @@
+.box {
+  background: white;
+  border-radius: 4px;
+  @include media-query(palm) {
+    border-radius: 0px;
+  }
+}

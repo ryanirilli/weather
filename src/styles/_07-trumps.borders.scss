@@ -1,0 +1,31 @@
+$border-color: #999;
+
+.u-b {
+  border: 1px solid $border-color;
+}
+.u-bt {
+  border-top: 1px solid $border-color;
+}
+.u-br {
+  border-right: 1px solid $border-color;
+}
+.u-bb {
+  border-bottom: 1px solid $border-color;
+}
+.u-bl {
+  border-left: 1px solid $border-color;
+}
+
+.u-bv {
+  @extend .u-bt;
+  @extend .u-bb;
+}
+
+.u-bh {
+  @extend .u-bl;
+  @extend .u-br;
+}
+
+.u-b0 {
+  border: none;
+}

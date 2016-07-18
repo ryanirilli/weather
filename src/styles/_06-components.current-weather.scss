@@ -1,0 +1,48 @@
+.current {
+  color: white;
+}
+
+.current__location {
+  font-weight: 100;
+}
+
+.current__icon {
+  font-size: 75px;
+  position: relative;
+  top: 14px;
+}
+
+.current__temp {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.current__degree-icon {
+  margin-left: -20px;
+  font-size: 35px;
+  display: inline-block;
+  position: relative;
+  top: -16px;
+}
+
+.day {
+  padding: 10px;
+  border-bottom: 1px solid rgba(black, 0.1);
+  font-weight: 100;
+}
+
+.day__icon {
+  font-size: 35px;
+  line-height: 1.2;
+  padding-right: 10px;
+}
+
+.day__degree-icon {
+  position: relative;
+  font-size: 13px;
+}
+
+.day__of-week {
+  font-size: 13px;
+  margin-bottom: 7px;
+}

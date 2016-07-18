@@ -1,0 +1,11 @@
+.loading-screen {
+  position: fixed;
+  left: calc(50% - 50px);
+  z-index: 999;
+  text-align: center;
+  top: 130px;
+  display: inline-block;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(black, 0.5);
+}
